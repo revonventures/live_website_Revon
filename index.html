@@ -67,7 +67,14 @@ body{
     z-index:2;
     max-width:650px;
 }
-.hero h1{font-size:3.4rem;font-weight:700;color:#fff;}
+
+.hero h1{
+    font-weight:700;
+    color:#fff;
+    line-height:1.15;
+    font-size:clamp(2rem, 5vw, 3.4rem);
+    word-break:break-word;
+}
 .hero h1 span{color:var(--primary);}
 .hero p{color:#e5e7eb;margin:20px 0;}
 .hero .btn{
@@ -320,6 +327,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
 
