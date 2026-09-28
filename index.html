@@ -145,44 +145,7 @@ body{
 .product-card:hover{
     transform:translateY(-10px);
 }
-<!-- CITIES WE SERVE -->
-<section id="reach" class="section stats">
-  <div class="container">
-    <div class="section-title">
-      <h2>Where We <span style="color:var(--primary)">Work</span></h2>
-      <p style="color:#94a3b8">Delivering GRC & FRP projects across India</p>
-    </div>
-    <div class="row text-center g-4">
-      <div class="col-6 col-md-3 stat-box">
-        <h3 class="display-4 fw-bold"><span class="count" data-count="10">0</span>+</h3>
-        <p>Cities Currently Active</p>
-      </div>
-      <div class="col-6 col-md-3 stat-box">
-        <h3 class="display-4 fw-bold"><span class="count" data-count="11">0</span></h3>
-        <p>Product Categories</p>
-      </div>
-    </div>
-    <p class="text-center mt-4" style="color:#94a3b8">
-      Jaipur · Delhi · Gurugram · Chandigarh · Lucknow · <em>(edit to your cities)</em>
-    </p>
-  </div>
-</section>
 
-<script>
-const io = new IntersectionObserver(entries => {
-  entries.forEach(en => {
-    if (!en.isIntersecting) return;
-    const el = en.target, end = +el.dataset.count;
-    let n = 0;
-    const t = setInterval(() => {
-      n++; el.textContent = n;
-      if (n >= end) clearInterval(t);
-    }, 80);
-    io.unobserve(el);
-  });
-}, {threshold: 0.5});
-document.querySelectorAll('.count').forEach(c => io.observe(c));
-</script>
 /* STATS */
 .stats{background:var(--dark);color:#fff;}
 .stat-box h3{color:var(--primary);}
@@ -418,7 +381,45 @@ From decorative facades and cladding panels to load-bearing structural elements,
     </div>
   </div>
 </section>
+<!-- CITIES WE SERVE -->
+<section id="reach" class="section stats">
+  <div class="container">
+    <div class="section-title">
+      <h2>Where We <span style="color:var(--primary)">Work</span></h2>
+      <p style="color:#94a3b8">Delivering GRC & FRP projects across India</p>
+    </div>
+    <div class="row text-center g-4">
+      <div class="col-6 col-md-3 stat-box">
+        <h3 class="display-4 fw-bold"><span class="count" data-count="10">0</span>+</h3>
+        <p>Cities Currently Active</p>
+      </div>
+      <div class="col-6 col-md-3 stat-box">
+        <h3 class="display-4 fw-bold"><span class="count" data-count="11">0</span></h3>
+        <p>Product Categories</p>
+      </div>
+    </div>
+    <p class="text-center mt-4" style="color:#94a3b8">
+      Jaipur · Delhi · Gurugram · Chandigarh · Lucknow · <em>(edit to your cities)</em>
+    </p>
+  </div>
+</section>
 
+<script>
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    const el = en.target, end = +el.dataset.count;
+    let n = 0;
+    const t = setInterval(() => {
+      n++; el.textContent = n;
+      if (n >= end) clearInterval(t);
+    }, 80);
+    io.unobserve(el);
+  });
+}, {threshold: 0.5});
+document.querySelectorAll('.count').forEach(c => io.observe(c));
+</script>
+    
 <!-- CONTACT -->
 <section id="contact" class="section">
   <div class="container">
