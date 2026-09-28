@@ -9,64 +9,14 @@
 <meta name="ICBM" content="26.915458, 75.818982" />
 
     <meta name="description" content="Revon Ventures offers premium GRC & FRP architectural construction solutions including facades, domes, columns, jali screens and cladding panels in Jaipur, Rajasthan.">
-  
 
 <title>REVON VENTURES |GRC Architectural Construction</title>
-<link rel="icon" type="images/jpg" href="logo.jpg" sizes="58x58 96x96">    
+<link rel="icon" type="images/jpg" href="logo.jpg" sizes="58x58 96x96">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* GALLERY COMING SOON */
-.coming-soon{
-    max-width:600px;
-    margin:0 auto;
-    text-align:center;
-    padding:60px 30px;
-    background:#fff;
-    border:2px dashed var(--primary);
-    border-radius:12px;
-    box-shadow:0 15px 35px rgba(0,0,0,0.06);
-}
-.coming-soon .cs-icon{font-size:48px;margin-bottom:10px;}
-.coming-soon h3{font-weight:700;color:var(--dark);}
-.coming-soon p{margin:10px 0 0;color:#64748b;}
-
-.product-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-
-.product-card h5 {
-  padding: 15px;
-  margin: 0;
-  font-weight: 600;
-  color: #333;
-}
-
-.product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-}
-    .product-link,
-.product-link:hover {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-  height: 100%;
-}
-.product-card h5 { text-decoration: none; }
-
-/* Mobile Optimization */
-@media (max-width: 576px) {
-  .product-card img {
-    height: 180px;
-  }
-}
-   
-} 
 :root{
     --primary:#c9a24d;
     --dark:#0f172a;
@@ -74,7 +24,7 @@
 .form-control.mb-3{
     color:#ffffff
 }
-    
+
 body{
     font-family:'Poppins',sans-serif;
     color:#334155;
@@ -147,22 +97,33 @@ body{
     box-shadow:0 20px 40px rgba(0,0,0,0.08);
 }
 
-/* PRODUCT CARDS */
-.product-card{
-    background:#fff;
-    padding:25px;
-    border-left:4px solid var(--primary);
-    box-shadow:0 15px 35px rgba(0,0,0,0.08);
-    transition:0.4s;
+/* PRODUCT LINKS (no underline) */
+.product-link,
+.product-link:hover{
+    text-decoration:none;
+    color:inherit;
+    display:block;
     height:100%;
-}
-.product-card:hover{
-    transform:translateY(-10px);
 }
 
 /* STATS */
 .stats{background:var(--dark);color:#fff;}
 .stat-box h3{color:var(--primary);}
+
+/* GALLERY COMING SOON */
+.coming-soon{
+    max-width:600px;
+    margin:0 auto;
+    text-align:center;
+    padding:60px 30px;
+    background:#fff;
+    border:2px dashed var(--primary);
+    border-radius:12px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.06);
+}
+.coming-soon .cs-icon{font-size:48px;margin-bottom:10px;}
+.coming-soon h3{font-weight:700;color:var(--dark);}
+.coming-soon p{margin:10px 0 0;color:#64748b;}
 
 /* CONTACT */
 .contact-box{
@@ -198,40 +159,122 @@ footer{
     background:transparent;
     border:1px solid #475569;
 }
-
 .custom-input::placeholder{
     color:#94a3b8;
 }
-
 .custom-input:focus{
     color:#ffffff;
     background:transparent;
     border-color:var(--primary);
     box-shadow:0 0 0 0.15rem rgba(201,162,77,0.25);
 }
-    /* HAMBURGER MENU COLOR – SAME AS FORM FIELDS */
-.navbar-toggler{
-    border:1px solid #475569; /* same as input border */
-}
 
+/* HAMBURGER MENU COLOR – SAME AS FORM FIELDS */
+.navbar-toggler{
+    border:1px solid #475569;
+}
 .navbar-toggler:focus{
     box-shadow:0 0 0 0.15rem rgba(201,162,77,0.25);
 }
-
 .navbar-toggler-icon{
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
-    /* 2-column product tiles on phones (keep this LAST) */
-@media (max-width: 576px){
+
+/* ===== DECORATIVE PRODUCT TILES (keep this last) ===== */
+#products .product-card{
+  position:relative;
+  padding:0;
+  overflow:hidden;
+  background:#fff;
+  border:1px solid rgba(201,162,77,.45);
+  border-radius:6px;
+  box-shadow:0 10px 28px rgba(15,23,42,.10);
+  transition:transform .4s ease, box-shadow .4s ease, border-color .4s ease;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+}
+#products .product-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+  transition:transform .6s ease;
+}
+/* thin gold inner frame over the photo */
+#products .product-card::before{
+  content:"";
+  position:absolute;
+  top:10px; left:10px; right:10px;
+  height:200px;
+  border:1px solid rgba(255,255,255,.75);
+  outline:1px solid rgba(201,162,77,.9);
+  outline-offset:-4px;
+  pointer-events:none;
+  z-index:2;
+  transition:all .4s ease;
+}
+/* gold corner accent */
+#products .product-card::after{
+  content:"";
+  position:absolute;
+  top:0; right:0;
+  border-style:solid;
+  border-width:0 44px 44px 0;
+  border-color:transparent var(--primary) transparent transparent;
+  z-index:3;
+}
+/* name bar */
+#products .product-card h5{
+  margin:0;
+  padding:16px 12px;
+  min-height:3.6em;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:var(--dark);
+  color:var(--primary);
+  font-size:.95rem;
+  font-weight:600;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  border-top:3px solid var(--primary);
+  transition:background .4s ease, color .4s ease;
+}
+/* hover */
+#products .product-card:hover{
+  transform:translateY(-8px);
+  border-color:var(--primary);
+  box-shadow:0 18px 40px rgba(201,162,77,.28);
+}
+#products .product-card:hover img{ transform:scale(1.08); }
+#products .product-card:hover::before{ top:6px; left:6px; right:6px; }
+#products .product-card:hover h5{
+  background:var(--primary);
+  color:#0f172a;
+}
+/* gold divider under section heading */
+#products .section-title h2::after{
+  content:"";
+  display:block;
+  width:70px; height:3px;
+  margin:14px auto 0;
+  background:var(--primary);
+}
+/* phones: 2 columns */
+@media (max-width:576px){
   #products .row{ --bs-gutter-x:.75rem; --bs-gutter-y:.75rem; }
-  .product-card{ padding:10px; }
-  .product-card img{ height:110px; }
-  .product-card h5{
-    font-size:.85rem;
-    padding:10px 4px 4px;
+  #products .product-card img{ height:115px; }
+  #products .product-card::before{ height:95px; top:8px; left:8px; right:8px; }
+  #products .product-card::after{ border-width:0 30px 30px 0; }
+  #products .product-card h5{
+    font-size:.68rem;
+    padding:10px 6px;
+    letter-spacing:.03em;
+    min-height:3.4em;
   }
 }
-    
 </style>
 </head>
 
@@ -405,6 +448,7 @@ From decorative facades and cladding panels to load-bearing structural elements,
     </div>
   </div>
 </section>
+
 <!-- CITIES WE SERVE -->
 <section id="reach" class="section stats">
   <div class="container">
@@ -412,9 +456,9 @@ From decorative facades and cladding panels to load-bearing structural elements,
       <h2>Where We <span style="color:var(--primary)">Work</span></h2>
       <p style="color:#94a3b8">Delivering GRC & FRP projects across India</p>
     </div>
-    <div class="row text-center g-4">
+    <div class="row text-center g-4 justify-content-center">
       <div class="col-6 col-md-3 stat-box">
-        <h3 class="display-4 fw-bold"><span class="count" data-count="10">0</span>+</h3>
+        <h3 class="display-4 fw-bold"><span class="count" data-count="6">0</span></h3>
         <p>Cities Currently Active</p>
       </div>
       <div class="col-6 col-md-3 stat-box">
@@ -423,7 +467,7 @@ From decorative facades and cladding panels to load-bearing structural elements,
       </div>
     </div>
     <p class="text-center mt-4" style="color:#94a3b8">
-      Jaipur · Delhi · Gurugram · Chandigarh · Dehradun · Hisar . <em></em></em>
+      Jaipur · Delhi · Gurugram · Chandigarh · Dehradun · Hisar
     </p>
   </div>
 </section>
@@ -457,7 +501,7 @@ document.querySelectorAll('.count').forEach(c => io.observe(c));
     </div>
   </div>
 </section>
-    
+
 <!-- CONTACT -->
 <section id="contact" class="section">
   <div class="container">
@@ -501,7 +545,7 @@ document.querySelectorAll('.count').forEach(c => io.observe(c));
 
 <!-- MAP (LAST TRUST SEAL) -->
 <section class="map-box">
-<iframe 
+<iframe
 src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3552.3507288924675!2d75.840679!3d27.082234999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjfCsDA0JzU2LjEiTiA3NcKwNTAnMjYuNCJF!5e0!3m2!1sen!2sin!4v1771159635202!5m2!1sen!2sin" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
 </iframe>
 </section>
@@ -525,27 +569,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
