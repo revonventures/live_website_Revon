@@ -18,7 +18,72 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* GALLERY STRIP */
+.gallery-wrap{position:relative;}
+.gallery-track{
+    display:flex;
+    gap:16px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+    padding:10px 4px 20px;
+    scrollbar-width:thin;
+}
+.gallery-track img{
+    flex:0 0 auto;
+    width:340px;
+    max-width:80vw;
+    aspect-ratio:16/10;
+    object-fit:cover;
+    border-radius:10px;
+    scroll-snap-align:start;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    cursor:zoom-in;
+    transition:transform .3s;
+}
+.gallery-track img:hover{transform:scale(1.03);}
 
+.g-btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-60%);
+    width:44px;height:44px;
+    border:none;border-radius:50%;
+    background:var(--primary);
+    color:#000;
+    font-size:22px;font-weight:700;
+    z-index:5;
+    box-shadow:0 4px 12px rgba(0,0,0,0.25);
+}
+.g-prev{left:-10px;}
+.g-next{right:-10px;}
+
+/* LIGHTBOX */
+.lightbox{
+    position:fixed;inset:0;
+    background:rgba(2,6,23,0.94);
+    display:none;
+    align-items:center;justify-content:center;
+    z-index:2000;
+}
+.lightbox.open{display:flex;}
+.lightbox img{
+    max-width:90vw;max-height:85vh;
+    border-radius:8px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+.lb-btn{
+    position:absolute;
+    background:rgba(255,255,255,0.12);
+    color:#fff;border:none;
+    width:48px;height:48px;border-radius:50%;
+    font-size:24px;
+}
+.lb-btn:hover{background:var(--primary);color:#000;}
+.lb-close{top:20px;right:20px;}
+.lb-prev{left:20px;top:50%;transform:translateY(-50%);}
+.lb-next{right:20px;top:50%;transform:translateY(-50%);}
+.lb-count{position:absolute;bottom:20px;color:#94a3b8;font-size:14px;}
 .product-card {
   background: #fff;
   border-radius: 12px;
@@ -45,6 +110,14 @@
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
 }
+    .product-link,
+.product-link:hover {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+.product-card h5 { text-decoration: none; }
 
 /* Mobile Optimization */
 @media (max-width: 576px) {
@@ -419,6 +492,40 @@ const io = new IntersectionObserver(entries => {
 }, {threshold: 0.5});
 document.querySelectorAll('.count').forEach(c => io.observe(c));
 </script>
+
+<!-- GALLERY -->
+<section id="gallery" class="section">
+  <div class="container">
+    <div class="section-title">
+      <h2>Project <span>Gallery</span></h2>
+      <p>Swipe or use the arrows. Click any photo to enlarge.</p>
+    </div>
+
+    <div class="gallery-wrap">
+      <button class="g-btn g-prev" aria-label="Previous">&#8249;</button>
+      <div class="gallery-track" id="galleryTrack">
+        <img src="images/structural-columns.svg" alt="GRC columns" loading="lazy">
+        <img src="images/dome-structures.svg" alt="GRC dome" loading="lazy">
+        <img src="images/architectural-arches.svg" alt="Arches" loading="lazy">
+        <img src="images/jharokha.svg" alt="Jharokha frame" loading="lazy">
+        <img src="images/jali.svg" alt="Jali screen" loading="lazy">
+        <img src="images/facade-panels.svg" alt="Facade panels" loading="lazy">
+        <img src="images/planters.svg" alt="Planters" loading="lazy">
+        <img src="images/balustrade.svg" alt="Balustrade" loading="lazy">
+      </div>
+      <button class="g-btn g-next" aria-label="Next">&#8250;</button>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-btn lb-close" aria-label="Close">&times;</button>
+  <button class="lb-btn lb-prev" aria-label="Previous">&#8249;</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-btn lb-next" aria-label="Next">&#8250;</button>
+  <div class="lb-count" id="lbCount"></div>
+</div>
     
 <!-- CONTACT -->
 <section id="contact" class="section">
