@@ -118,7 +118,16 @@
     height: 180px;
   }
 }
-    
+   /* 2-column product tiles on phones */
+@media (max-width: 576px){
+  #products .row{ --bs-gutter-x:.75rem; --bs-gutter-y:.75rem; }
+  .product-card{ padding:10px; }
+  .product-card img{ height:110px; }
+  .product-card h5{
+    font-size:.85rem;
+    padding:10px 4px 4px;
+  }
+} 
 :root{
     --primary:#c9a24d;
     --dark:#0f172a;
@@ -335,7 +344,7 @@ From decorative facades and cladding panels to load-bearing structural elements,
     <div class="row g-4">
 
       <!-- 1 -->
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-6 col-sm-4">
         <a href="products/structural-columns.html" class="product-link">
           <div class="product-card">
             <img src="images/structural-columns.jpg" alt="Structural Columns">
@@ -345,7 +354,7 @@ From decorative facades and cladding panels to load-bearing structural elements,
       </div>
 
       <!-- 2 -->
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-6 col-sm-4">
         <a href="products/dome-structures.html" class="product-link">
           <div class="product-card">
             <img src="images/dome-structures.jpg" alt="Dome Structures">
@@ -355,7 +364,7 @@ From decorative facades and cladding panels to load-bearing structural elements,
       </div>
 
       <!-- 3 -->
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-6 col-sm-4">
         <a href="products/architectural-arches.html" class="product-link">
           <div class="product-card">
             <img src="images/architectural-arches.jpg" alt="Architectural Arches">
@@ -365,7 +374,7 @@ From decorative facades and cladding panels to load-bearing structural elements,
       </div>
 
       <!-- 4 -->
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-6 col-sm-4">
         <a href="products/facade-panels.html" class="product-link">
           <div class="product-card">
             <img src="images/facade-panels.jpg" alt="Facade Panels">
@@ -375,7 +384,7 @@ From decorative facades and cladding panels to load-bearing structural elements,
       </div>
 
       <!-- 5 -->
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-6 col-sm-4">
         <a href="products/cornice-molding.html" class="product-link">
           <div class="product-card">
             <img src="images/cornice-molding.jpg" alt="Cornice & Crown Moldings">
@@ -385,7 +394,7 @@ From decorative facades and cladding panels to load-bearing structural elements,
       </div>
 
       <!-- 6 -->
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-6 col-sm-4">
         <a href="products/brackets.html" class="product-link">
           <div class="product-card">
             <img src="images/brackets.jpg" alt="Architectural Brackets">
@@ -395,7 +404,7 @@ From decorative facades and cladding panels to load-bearing structural elements,
       </div>
 
       <!-- 7 -->
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-6 col-sm-4">
         <a href="products/jharokha.html" class="product-link">
           <div class="product-card">
             <img src="images/jharokha.jpg" alt="Jharokha Frames">
@@ -405,7 +414,7 @@ From decorative facades and cladding panels to load-bearing structural elements,
       </div>
 
       <!-- 8 -->
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-6 col-sm-4">
         <a href="products/window-molding.html" class="product-link">
           <div class="product-card">
             <img src="images/window-molding.jpg" alt="Window Moldings">
@@ -415,7 +424,7 @@ From decorative facades and cladding panels to load-bearing structural elements,
       </div>
 
       <!-- 9 -->
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-6 col-sm-4">
         <a href="products/jali.html" class="product-link">
           <div class="product-card">
             <img src="images/jali.jpg" alt="Decorative Jali Screens">
@@ -425,7 +434,7 @@ From decorative facades and cladding panels to load-bearing structural elements,
       </div>
 
       <!-- 10 -->
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-6 col-sm-4">
         <a href="products/planters.html" class="product-link">
           <div class="product-card">
             <img src="images/planters.jpg" alt="Planter Collections">
@@ -435,7 +444,7 @@ From decorative facades and cladding panels to load-bearing structural elements,
       </div>
 
       <!-- 11 -->
-      <div class="col-md-4 col-sm-6">
+      <div class="col-md-6 col-sm-4">
         <a href="products/balustrade.html" class="product-link">
           <div class="product-card">
             <img src="images/balustrade.jpg" alt="Balusters & Railings">
@@ -496,7 +505,7 @@ document.querySelectorAll('.count').forEach(c => io.observe(c));
 
     <div class="slider" id="slider">
       <button class="g-btn g-prev" aria-label="Previous">&#8249;</button>
-      <div class="slide"><img src="images/structural-columns.svg" alt="GRC columns"></div>
+      <div class="slide"><img src="images/structural-columns.png" alt="GRC columns"></div>
       <div class="slide"><img src="images/dome-structures.svg" alt="GRC dome"></div>
       <div class="slide"><img src="images/architectural-arches.svg" alt="Arches"></div>
       <div class="slide"><img src="images/jharokha.svg" alt="Jharokha frame"></div>
